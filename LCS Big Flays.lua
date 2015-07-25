@@ -23,15 +23,9 @@ Config:addParam("gapCloseDelay", "Humanizer for gapclose", SCRIPT_PARAM_SLICE, 0
 Config:addParam("autoBoxNum", "min number of enemies for auto box" , SCRIPT_PARAM_SLICE, 2, 0, 5, 0)
 Config:addParam("autoBox", "Auto Ult", SCRIPT_PARAM_ONOFF, false)
 Config:permaShow("comboMode")
-createMenu()
-
-LoadSkills()
-IgniteCheck()
-
 
 VP = Vpreditcion()
 HPRED = Hprediction()
-LoadOrbwalkers()
 end
 
 
