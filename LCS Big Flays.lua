@@ -21,7 +21,7 @@ Config:addParam("comboMode", "Combo Mode", SCRIPT_PARAM_ONKEYDOWN, false, string
 Config:addParam("Madlife", "Madlife Mode", SCRIPT_PARAM_ONKEYDOWN, false, string.byte "a")
 Config:addParam("gapCloseDelay", "Humanizer for gapclose", SCRIPT_PARAM_SLICE, 0.05, 0, 1.5, 2)
 Config:addParam("autoBoxNum", "min number of enemies for auto box" , SCRIPT_PARAM_SLICE, 2, 0, 5, 0)
-Config:addParam("autoBox", "Auto Ult", SCRIPT_PARAM_ONOFF, false,)
+Config:addParam("autoBox", "Auto Ult", SCRIPT_PARAM_ONOFF, false)
 Config:permaShow("comboMode")
 createMenu()
 
