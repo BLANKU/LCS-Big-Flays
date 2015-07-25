@@ -9,7 +9,8 @@ local REVISION = 1
 
 
 -- Variables
-local BoxRange = 375
+local BoxRange = 360
+
 
 --Load Section
 function OnLoad()
@@ -17,7 +18,8 @@ ts = TargetSelector(TARGET_LESS_CAST_PRIORITY,1100)
  
 Config = scriptConfig("Settings", "BigFlays")
 Config:addParam("comboMode", "Combo Mode", SCRIPT_PARAM_ONKEYDOWN, false, string.byte " ")
-Config:addParam("gapCloseDelay", "Humanizer for gapclose", SCRIPT_PARAM_SLICE, 0.05, 0, 1.5, 1)
+Config:addParam("Madlife", "Madlife Mode", SCRIPT_PARAM_ONKEYDOWN, false, string.byte "a")
+Config:addParam("gapCloseDelay", "Humanizer for gapclose", SCRIPT_PARAM_SLICE, 0.05, 0, 1.5, 2)
 Config:addParam("autoBoxNum", "min number of enemies for auto box" , SCRIPT_PARAM_SLICE, 2, 0, 5, 0)
 Config:addParam("autoBox", "Auto Ult", SCRIPT_PARAM_ONOFF, false,)
 Config:permaShow("comboMode")
@@ -46,6 +48,10 @@ function OnTick()
             	  CastSpell(_Q, CastPosition.x, CastPosition.z)
 				end
 			end
+	--if ts.target ~= nil then
+		--if config.Madlife then
+			--if myHero:CanUseSpell(_Q) == READY then
+
 			--anti gap closer
 			if myHero:CanUseSpell(_E) == READY then
 				local CastPosition, HitChance, Position = VP:GetLineCastPosition(ts.target, gapCloseDelay, 160, 515, math.huge, myHero,false)
