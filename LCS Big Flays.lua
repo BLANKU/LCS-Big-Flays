@@ -81,7 +81,7 @@ function OnTick()
 			end
 		end
 	end
-end
+
 
 -- Flay Calculation
 function GetReverseFlayPos(originalPos)
