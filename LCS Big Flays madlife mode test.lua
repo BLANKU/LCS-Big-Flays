@@ -48,8 +48,8 @@ function OnTick()
 	ts:update()
 
 	--Q in combo mode
-	if TargetValid(ts.target)
-		if Config.comboMode then
+	if TargetValid(ts.target) then
+	    if Config.comboMode then
 			if myHero:CanUseSpell(_Q) == READY then
 				local CastPosition, HitChance, Position = VP:GetLineCastPosition(ts.target, 0.5, 60, 1075, 1200, myHero, true)
           		if HitChance >= 2 then
