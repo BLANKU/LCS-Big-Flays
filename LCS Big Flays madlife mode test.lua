@@ -12,10 +12,10 @@ local REVISION = 1
 local BoxRange = 360
 
 --madlife Q
-local function CastQ(unit)
-    TargetDashing, CanHit, Position = VPrediction:IsDashing(ts.target, 0.5, 60, 1075, myHero)
-    if CanHit then
-        CastSpell(_Q, Position.x,Position.z)
+function CastQ(unit)
+    local pos, HitChance = VPrediction:GetLineCastPosition(unit, 0.5, 60, 1075, 1200, myHero, true )
+    if HitChance == 5 then
+        CastSpell(_Q, Pos.x,Pos.z)
     end
 end 
 
@@ -48,7 +48,7 @@ function OnTick()
 	ts:update()
 
 	--Q in combo mode
-	if ts.target ~= nil then
+	if TargetValid(ts.target)
 		if Config.comboMode then
 			if myHero:CanUseSpell(_Q) == READY then
 				local CastPosition, HitChance, Position = VP:GetLineCastPosition(ts.target, 0.5, 60, 1075, 1200, myHero, true)
@@ -57,7 +57,7 @@ function OnTick()
 				end
 			end
 	--madlife Q
-	if ts.target ~= nil then
+	if TargetValid(ts.target) then
 		if config.Madlife then
 			if myHero:CanUseSpell(_Q) == READY then
 				CastQ(ts.target)

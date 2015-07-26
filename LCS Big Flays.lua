@@ -24,7 +24,7 @@ Config:addParam("autoBoxNum", "min number of enemies for auto box" , SCRIPT_PARA
 Config:addParam("autoBox", "Auto Ult", SCRIPT_PARAM_ONOFF, false)
 Config:permaShow("comboMode")
 
-VP = Vpreditcion()
+VP = VPrediction()
 HPRED = Hprediction()
 end
 
